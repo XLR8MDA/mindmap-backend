@@ -37,6 +37,7 @@ async def shutdown_event():
 @app.get("/health")
 def check_health():
     return 'OK'
+    
 
 @app.post("/generate-mindmap", response_model=dict)
 def generate_mindmap_endpoint(query: QueryModel):
