@@ -34,6 +34,10 @@ async def shutdown_event():
     logger.info("Application shutdown: FastAPI server is shutting down.")
 
 
+@app.get("/health")
+def check_health():
+    return 'OK'
+
 @app.post("/generate-mindmap", response_model=dict)
 def generate_mindmap_endpoint(query: QueryModel):
     """
